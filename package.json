@@ -1,8 +1,8 @@
 {
   "name": "vortex",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "vortex chat app",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/l1fsec/vortex-chat-app.git"
   },
-  "author": "",
+  "keywords": [
+    "chat",
+    "app"
+  ],
+  "author": "l1fsec",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/l1fsec/vortex-chat-app/issues"
