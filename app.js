@@ -1,17 +1,19 @@
-//app.js
 const { info } = require('console');
 const express = require('express');
 const app = express();
-//http socket.io server setup
 const server = require('http').Server(app);
 
-//socket.io setup and connection
+//connection
 const io = require('socket.io') (server);
+//We'll store our online users here
+let onlineUsers = {};
+let channels = {"General": []};
 io.on("connection", (socket) => {
-    console.log("User connected " + Date.now());
+  require('./sockets/chat.js') (io, socket, onlineUsers, channels);
 })
 io.on("connection", (socket) => {
-  require('./sockets/chat.js') (io, socket);
+  // Make sure to send the users to our chat file
+  require('./sockets/chat.js')(io, socket, onlineUsers);
 })
 //express handlebars setup
 const { engine }  = require('express-handlebars');
@@ -28,6 +30,8 @@ app.get('/', (req, res) => {
   res.render('index.hbs');
 })
 
+//listen to connection
 server.listen('3000', () => {
   console.log('Server listening on Port 3000');
 })
+//app.js
