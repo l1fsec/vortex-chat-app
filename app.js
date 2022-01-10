@@ -11,10 +11,6 @@ let channels = {"General": []};
 io.on("connection", (socket) => {
   require('./sockets/chat.js') (io, socket, onlineUsers, channels);
 })
-io.on("connection", (socket) => {
-  // Make sure to send the users to our chat file
-  require('./sockets/chat.js')(io, socket, onlineUsers);
-})
 //express handlebars setup
 const { engine }  = require('express-handlebars');
 app.engine('hbs', engine({
