@@ -2,6 +2,7 @@ const { info } = require('console');
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
+const PORT = process.env.PORT || 3000;
 
 //connection
 const io = require('socket.io') (server);
@@ -27,7 +28,7 @@ app.get('/', (req, res) => {
 })
 
 //listen to connection
-server.listen('3000', () => {
+server.listen(PORT, () => {
   console.log('Server listening on Port 3000');
 })
 //app.js
