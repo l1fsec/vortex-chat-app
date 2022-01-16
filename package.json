@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/l1fsec/vortex-chat-app#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "mongoose": "^6.1.5",
+    "mysql": "^2.18.1",
     "socket.io": "^4.4.1"
   }
 }
