@@ -1,7 +1,10 @@
 * {
   font-family: helvetica;
 }
-
+body {
+    background-color: #333333
+    ;
+}
 .username-form {
   display: flex;
   width: 50%;
@@ -74,18 +77,18 @@
 }
 
 .brand {
-  margin-left: 8px;
+  margin-left: 15px;
 }
 
 .channels-label {
-  margin-left: 8px;
+  margin-left: 10px;
 }
 
 .chat-container {
   width: 80%;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #333333;
 }
 
 .chat-container-fluid {
@@ -95,15 +98,16 @@
 }
 
 .channels-and-users-online-container {
-  width: 20%;
-  margin-left: -8px;
-  margin-top: -8px;
-  margin-right: 8px;
+  width: 21%;
+  margin-left: 2px;
+  margin-top: -1px;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
-  height: 750px;
-  background-color: #4d394b;
+  height: 926px;
+  background-color: #bda374;
   color: white;
+  border-radius: 12px
 }
 
 .users-online {
@@ -122,8 +126,8 @@
 }
 
 .text-chat-divide {
-  border: 0.5px solid green;
-  margin-bottom: 10px;
+  border: 4px solid #bda374;
+  margin-bottom: 7px;
 }
 
 .chat-box {
@@ -139,6 +143,7 @@ label {
 #chat-input {
   width: 100%;
   display: inline;
+  background: #bda374;
 }
 
 #send-chat-btn {
