@@ -2,32 +2,50 @@
   font-family: helvetica;
 }
 body {
-    background-color: #333333
-    ;
+    background-color: #000000;
+    color: rgb(134, 134, 134);
+    margin: 0;
 }
 .username-form {
-  display: flex;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 7em;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 255, 21, 0.1);
+    box-shadow: 0px 0px 20px 0px rgb(35 255 0 / 60%);
+    padding: 50px 35px;
 }
 
 #username-input {
-  font-size: 20px;
-  padding: 5px;
-  margin-bottom: 5px;
-  width: 100%;
+  display: inline-block;
+    height: 50px;
+    color: white;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.00);
+    border-radius: 28px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 #create-user-btn {
-  width: 45%;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 5px;
+  margin-top: 5%;
+  background-color:#000000;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#bebebe;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
 }
 
 .channels {
@@ -88,7 +106,7 @@ body {
   width: 80%;
   display: flex;
   flex-direction: column;
-  background-color: #333333;
+  background-color: #000000;
 }
 
 .chat-container-fluid {
@@ -105,7 +123,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 926px;
-  background-color: #bda374;
+  background-color: #000000;
   color: white;
   border-radius: 12px
 }
@@ -116,7 +134,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  overflow-y: auto;
+  overflow-y: auto; 
   flex: 4;
 }
 
@@ -141,9 +159,11 @@ label {
 }
 
 #chat-input {
+  position:fixed;
+  bottom: 0px;
   width: 100%;
   display: inline;
-  background: #bda374;
+  background: #919191;
 }
 
 #send-chat-btn {
