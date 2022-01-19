@@ -1,50 +1,133 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>Make Chat</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="socket.io/socket.io.js"></script>
-  <script src="/public/index.js"></script>
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css'>
-  </link>
-  <link href='/public/index.css' rel='stylesheet' type='text/css'>
-  </link>
-</head>
-
-<body>
-
-  <form class="username-form">
-    <label for="username-input">Please enter your username</label>
-    <input id="username-input" placeholder="Username"></input>
-    <button id="create-user-btn">Join Chat</button>
-  </form>
-
-  <div class="main-container">
-    <div class="channels-and-users-online-container">
-      <h1 class="brand">Make Chat</h1>
-      <div class="channels">
-        <h2 class="channels-label">Channels</h2>
-        <div class="new-channel-form"><input id="new-channel-input" placeholder="New Channel" /><button
-            id="new-channel-btn">Create</button></div>
-        <div class="channel-current">General</div>
-      </div>
-      <h2>Online Users</h2>
-      <div class="users-online"></div>
+<body class="hold-transition login-page">
+  <div class="login-box username-form">
+    <div class="login-logo">
+      <p><b>Vortex</b>Chat</p>
     </div>
-    <div class="chat-container">
-      <div class="chat-container-fluid">
-        <div class="message-container">
-          <h2>Messages</h2>
-        </div>
-        <div class="text-chat-divide"></div>
-        <div class="chat-box"><textarea id="chat-input" placeholder="Type a message"></textarea><button class="btn"
-            id="send-chat-btn">Send</button></div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form>
+          <div class="input-group mb-3">
+            <input
+              id="username-input"
+              type="text"
+              class="form-control"
+              placeholder="Username"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+                
+              </div>
+            </div>
+          </div>
+           <div class="col-4">
+            <button id="create-user-btn" type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 
-</body>
+  <div class="wrapper d-none">
+<!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  </nav>
+  <!-- /.navbar -->
 
-</html>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <div class="channels-and-users-online-container">
+          <div class="channels">
+            <h2 class="channels-label"> Channels</h2>
+            <div class="new-channel-form"><input id="new-channel-input" placeholder="New Channel" /><button id="new-channel-btn">Create</button></div>
+            <div class="channel-current">General</div>
+        </div>
+        <h2>Online Users</h2>
+        <div class="users-online"></di>
+      </div>
+         </div>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Messages</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Starter Page</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+ 
+        <div class="chat-container">
+      <div class="chat-container-fluid">
+        <div class="message-container">
+          <h2>Messages</h2>
+        </div>
+         <div class="direct-chat-messages">
+
+         </div>
+        <div class="text-chat-divide"></div>
+         <div class="box-footer">
+    <div class="input-group">
+      <input id="chat-input" type="text" name="message" placeholder="Type Message ..." class="form-control">
+      <span class="input-group-btn">
+                <button  id="send-chat-btn" type="button" class="btn btn-danger btn-flat">Send</button>
+                </span>
+    </div>
+    </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    &copy; Jan Pliska
+  </footer>
+  </div>
+</body>

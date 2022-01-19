@@ -26,10 +26,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/public", express.static("public"));
 //path to index.hbs
 app.get("/", (req, res) => {
-  res.render("index.hbs");
+  res.render("index.hbs", {
+    title: "Vortex",
+    style: "index.css",
+  });
 });
 app.use("/auth", require("./routes/auth"));
 //listen to connection
 server.listen(PORT, () => {
   console.log("Server listening on Port 3000");
+  
 });
+
