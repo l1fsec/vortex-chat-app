@@ -1,5 +1,6 @@
 const User = require("../../models/user");
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
 
 const postRegister = async (req, res) => {
     try {
@@ -9,7 +10,7 @@ const postRegister = async (req, res) => {
         const userExists = await User.exists({ mail });
 
         if (userExists){
-            return res.status(409).send("Email is already used.")
+            return res.status(409).send("Email is already used.") //response conflict 
         }
 
         //encryption of password
@@ -22,8 +23,17 @@ const postRegister = async (req, res) => {
             password: encryptedPassword
         });
 
-        //here goes jwt token
-        const token = 'JWT TOKEN';
+        //here goes jwt token | forgot to require it before
+        const token = jwt.sign(
+            {
+                userId: user._id,
+                mail,
+            },
+            process.env.TOKEN_KEY,
+            {
+                expiresIn: "24",
+            }
+        );
 
         res.status(201).json({
             userDetails: {
