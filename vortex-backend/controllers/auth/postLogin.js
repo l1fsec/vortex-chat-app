@@ -4,15 +4,24 @@ const jwt = require('jsonwebtoken');
 
 const postLogin = async (req, res) => {
    try {
-       const {mail, password} = req.body;
+       const { mail, password } = req.body;
 
        const user = await User.findOne({mail: mail.toLowerCase});
 
        if(user && (await bcrypt.compare(password, user.password))) {
-           //send new token
-           const token = 'JWT_TOKEN';
+          
+           const token = jwt.sign(
+               {
+                   userId: user._id,
+                   mail,
+               },
+               process.env.TOKEN_KEY,
+               {
+                   expiresIn: "24",
+               }
+           );
 
-           return res.status(200).json({
+           return res.status(200).json({ //OK
                userDetails: {
                    mail: user.mail,
                    token: token,
@@ -20,9 +29,9 @@ const postLogin = async (req, res) => {
                },
            })
        }
-       return res.status(400).send('Invalid credentials. Please try again.');
+       return res.status(400).send('Invalid credentials. Please try again.');  //Bad Request
    } catch (err) {
-       return res.status(500).send('Something is not working. Please try again.');
+       return res.status(500).send('Something is not working. Please try again.'); //Internal Server Error
    }
 };
 
