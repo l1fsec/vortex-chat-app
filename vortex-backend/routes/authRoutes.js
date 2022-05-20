@@ -20,9 +20,9 @@ const loginSchema = Joi.object({
 router.post("/register", validator.body(registerSchema), authControllers.controllers.postRegister);
 router.post("/login", validator.body(loginSchema), authControllers.controllers.postLogin);
 
-//test middleware
-router.get('/test', auth, (req, res) => {
-    res.send("request passed");
-});
+// test middleware
+// router.get('/test', auth, (req, res) => {
+//     res.send("request passed");
+// });
 
 module.exports = router;
