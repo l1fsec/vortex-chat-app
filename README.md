@@ -6,6 +6,7 @@ Vortex je prohlížečový chat klient, který běží na upraveném [MERN Stack
 ### 1. Frontend
 + Redux React
 + Material UI
++ axios
 
 ### 2. Backend
 + bcryptjs
@@ -15,11 +16,9 @@ Vortex je prohlížečový chat klient, který běží na upraveném [MERN Stack
 + joi
 + jsonwebtoken
 + mongoose
-+ nodemon
 
 ### 3. Prostředí vývoje
 + dotenv
 + nodemon
-+ axios
 ***
 ## To be continued..
