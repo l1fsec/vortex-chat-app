@@ -3,11 +3,23 @@ Vortex je prohlížečový chat klient, který běží na upraveném [MERN Stack
 ***
 ## Další knihovny 
 
-### 1.  Týkající se aplikace
+### 1. Frontend
 + Redux React
-+ Cors
-+ JOI
 + Material UI
-### 2. Týkající se prostředí vývoje
+
+### 2. Backend
++ bcryptjs
++ cors
++ express
++ express-joi-validation
++ joi
++ jsonwebtoken
++ mongoose
++ nodemon
+
+### 3. Prostředí vývoje
 + dotenv
 + nodemon
++ axios
+***
+## To be continued..
