@@ -21,4 +21,7 @@ Vortex je prohlížečový chat klient, který běží na upraveném [MERN Stack
 + dotenv
 + nodemon
 ***
-## To be continued..
+## TODO
+
+Dodělat komponenty pro React a login/register komponenty.
+> Celkově frontend 
