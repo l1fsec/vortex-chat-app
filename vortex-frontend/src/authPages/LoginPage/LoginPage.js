@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AuthBox from '../../shared/components/AuthBox';
 import LoginPageFooter from './LoginPageFooter';
 import LoginPageHeader from './LoginPageHeader';

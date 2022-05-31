@@ -30,8 +30,8 @@ const login = (userDetails, navigate) => {
             const { userDetails } = response?.data;
             localStorage.setItem('user', JSON.stringify(userDetails)); //set a new user in local storage
 
-            dispatch(setUserDetails(userDetails));
-            navigate("/dashboard");
+            dispatch(setUserDetails(userDetails)); 
+            navigate("/dashboard"); //after logging me in, push me to /dashboard
         }
     };
 };
