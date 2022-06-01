@@ -1,52 +1,50 @@
 const User = require("../../models/user");
 const bcrypt = require("bcryptjs");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const postRegister = async (req, res) => {
-    try {
-        const { username, mail, password, } = req.body;
+  try {
+    const { username, mail, password } = req.body;
 
-        //check if user exists
-        const userExists = await User.exists({ mail });
+    //check if user exists
+    const userExists = await User.exists({ mail });
 
-        if (userExists){
-            return res.status(409).send("Email is already used.") //response conflict 
-        }
-
-        //encryption of password
-        const encryptedPassword = await bcrypt.hash(password, 10);
-
-        //create and save user
-        const user = await User.create({
-            username, 
-            mail: mail.toLowerCase(),
-            password: encryptedPassword
-        });
-
-        //here goes jwt token | forgot to require it before
-        const token = jwt.sign(
-            {
-                userId: user._id,
-                mail,
-            },
-            process.env.TOKEN_KEY,
-            {
-                expiresIn: "24",
-            }
-        );
-
-        res.status(201).json({
-            userDetails: {
-                mail: user.mail,
-                token: token,
-                username: user.username,
-            }
-        })
-
-    } catch (err) {
-        return res.status(500).send('There was an error! Please try again!')
+    if (userExists) {
+      return res.status(409).send("Email is already used."); //response conflict
     }
+
+    //encryption of password
+    const encryptedPassword = await bcrypt.hash(password, 10);
+
+    //create and save user
+    const user = await User.create({
+      username,
+      mail: mail.toLowerCase(),
+      password: encryptedPassword,
+    });
+
+    //here goes jwt token | forgot to require it before
+    const token = jwt.sign(
+      {
+        userId: user._id,
+        mail,
+      },
+      process.env.TOKEN_KEY,
+      {
+        expiresIn: "24",
+      }
+    );
+
+    res.status(201).json({
+      userDetails: {
+        mail: user.mail,
+        token: token,
+        username: user.username,
+      },
+    });
+  } catch (err) {
+    return res.status(500).send("There was an error! Please try again!");
+  }
 };
 
-
-module.exports = postRegister
+module.exports = postRegister;
