@@ -6,7 +6,7 @@ const postLogin = async (req, res) => {
   try {
     const { mail, password } = req.body; //request body mail and password
 
-    const user = await User.findOne({ mail: mail.toLowerCase });
+    const user = await User.findOne({ mail: mail.toLowerCase() });
 
     if (user && (await bcrypt.compare(password, user.password))) {
       //password verification

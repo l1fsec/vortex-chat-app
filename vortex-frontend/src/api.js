@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiClient = axios.create({
   baseURL: "http://localhost:4000/api",
-  timeout: 1000,
+  timeout: 2000,
 });
 
 export const login = async (data) => {

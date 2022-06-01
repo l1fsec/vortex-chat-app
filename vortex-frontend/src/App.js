@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; //Thi
 import LoginPage from "./authPages/LoginPage/LoginPage";
 import RegisterPage from "./authPages/RegisterPage/RegisterPage";
 import Dashboard from "./Dashboard/Dashboard";
+import AlertNotification from "./shared/components/AlertNotification";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           {/*  If we call anything that isn't /login, /register or /dashboard return us to /dashboard. */}
         </Routes>
       </BrowserRouter>
+      <AlertNotification />
     </>
   );
 }
