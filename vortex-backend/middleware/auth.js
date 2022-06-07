@@ -6,7 +6,7 @@ const verifyToken = (req, res, next) => {
   let token = req.body.token || req.query.token || req.headers["authorization"]; //verify token token
 
   if (!token) {
-    return res.status(403).send("A token is required for authententication"); //if there is no token send 403
+    return res.status(403).send("A token is required for authententication"); //if there is no token send 403 forbidden
   }
   try {
     token = token.replace(/^User\s+/, "");
@@ -14,6 +14,7 @@ const verifyToken = (req, res, next) => {
     req.user = decoded;
   } catch (err) {
     return res.status(401).send("Invalid token");
+    //send 401 unauthorized
   }
   return next();
 };

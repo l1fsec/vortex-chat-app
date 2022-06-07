@@ -7,7 +7,7 @@ import { Tooltip } from "@mui/material";
 //copied from LoginPageFooter.js
 //when conditions are not met
 const getFormNotValidMessage = () => {
-  return "Username should contain between 3 and 12 characters. /n Password should contain between 6 and 12 characters. /n E-mail address should be provided!";
+  return "Username should contain between 3 and 12 characters. \n Password should contain between 6 and 12 characters. \n E-mail address should be provided!";
 };
 //when form conditions are met
 const getFormValid = () => {

@@ -5,10 +5,10 @@ import { styled } from "@mui/system";
 const BoxWrapper = styled("div")({
   width: "100%",
   height: "100vh",
-  display: "flex", //something is off with styling, not sure how to fix.
+  display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  background: "#003566",
+  background: "#5865F2",
 });
 
 const AuthBox = (props) => {
@@ -17,15 +17,16 @@ const AuthBox = (props) => {
       <Box
         sx={{
           width: 700,
-          height: 400, //Style the box
-          bgcolor: "#0d1321",
+          height: 400,
+          bgcolor: "#36393f",
           borderRadius: "5px",
-          boxShadow: "0 10px 10px 0 rgb(13, 19, 33 / 10%",
+          boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
+          display: "flex",
           flexDirection: "column",
           padding: "25px",
         }}
       >
-        {props.children} {/*Here will be others*/}
+        {props.children}
       </Box>
     </BoxWrapper>
   );

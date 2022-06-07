@@ -23,7 +23,7 @@ const postLogin = async (req, res) => {
       );
 
       return res.status(200).json({
-        //OK
+        // everything is OK send
         userDetails: {
           mail: user.mail,
           token: token,

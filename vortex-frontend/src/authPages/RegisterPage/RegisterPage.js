@@ -33,6 +33,7 @@ const RegisterPage = ({ register }) => {
 
   useEffect(() => {
     setIsFormValid(
+      //effect calls setIsFormValid and function validateRegisterForm to validate mail, username, password.
       validateRegisterForm({
         mail,
         username,
@@ -68,4 +69,5 @@ const mapActionsToProps = (dispatch) => {
   };
 };
 
+//map actions to properties to dispath to store
 export default connect(null, mapActionsToProps)(RegisterPage);

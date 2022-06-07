@@ -6,7 +6,7 @@ import { Tooltip } from "@mui/material";
 
 //when conditions are not met
 const getFormNotValidMessage = () => {
-  return "Enter correct e-mail address and password. It should contain characters between 6 to 12 characters!";
+  return "Enter correct e-mail address and password. \n It should contain characters between 6 to 12 characters!";
 };
 //when form conditions are met
 const getFormValid = () => {
@@ -16,12 +16,14 @@ const getFormValid = () => {
 const LoginPageFooter = ({ handleLogin, isFormValid }) => {
   const navigate = useNavigate(); //Don't have an account? Push to /register
   const handlePushToRegisterPage = () => {
+    //register handler
     navigate("/register");
   };
 
   return (
     <>
       <Tooltip title={!isFormValid ? getFormNotValidMessage() : getFormValid()}>
+        {/* Hover on button*/}
         <div>
           <CustomPrimaryButton
             label="Log In"
