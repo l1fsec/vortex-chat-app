@@ -2,29 +2,31 @@ import axios from "axios";
 import { logout } from "./shared/utils/auth";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:4000/api", //connect us on backend
-  timeout: 2000, //timeout after 2secs
+  baseURL: "http://localhost:5002/api",
+  timeout: 1000,
 });
 
 apiClient.interceptors.request.use(
   (config) => {
-    //authorization with token from local storage of browser
     const userDetails = localStorage.getItem("user");
 
     if (userDetails) {
-      const token = JSON.parse(userDetails).token; //parse JSON and add token
-      config.headers.Authorization = `User ${token}`; //authorization headers with token
+      const token = JSON.parse(userDetails).token;
+      config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
   },
   (err) => {
-    return Promise.reject(err); //return our config
+    return Promise.reject(err);
   }
 );
 
+// public routes
+
 export const login = async (data) => {
   try {
-    return await apiClient.post("/auth/login", data); //push us to already defined functions on our backend
+    return await apiClient.post("/auth/login", data);
   } catch (exception) {
     return {
       error: true,
@@ -35,9 +37,8 @@ export const login = async (data) => {
 
 export const register = async (data) => {
   try {
-    return await apiClient.post("/auth/register", data); //push us to already defined functions on our backend
+    return await apiClient.post("/auth/register", data);
   } catch (exception) {
-    //catch any exceptions
     return {
       error: true,
       exception,
@@ -45,6 +46,7 @@ export const register = async (data) => {
   }
 };
 
+// secure routes
 export const sendFriendInvitation = async (data) => {
   try {
     return await apiClient.post("/friend-invitation/invite", data);
@@ -56,6 +58,7 @@ export const sendFriendInvitation = async (data) => {
     };
   }
 };
+
 export const acceptFriendInvitation = async (data) => {
   try {
     return await apiClient.post("/friend-invitation/accept", data);
@@ -87,5 +90,3 @@ const checkResponseCode = (exception) => {
     (responseCode === 401 || responseCode === 403) && logout();
   }
 };
-
-//401 - if response code is Unauthorized (401) or code Forbidden (403) it calls logout function which does its thing

@@ -1,11 +1,10 @@
 import { authActions } from "../actions/authActions";
 
 const initState = {
-  userDetails: null, //user details by default are null to prevent foolery
+  userDetails: null,
 };
 
 const reducer = (state = initState, action) => {
-  // Initial state of site
   switch (action.type) {
     case authActions.SET_USER_DETAILS:
       return {
@@ -16,4 +15,5 @@ const reducer = (state = initState, action) => {
       return state;
   }
 };
+
 export default reducer;

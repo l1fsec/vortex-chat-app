@@ -11,14 +11,14 @@ const additionalStyles = {
 };
 
 const AddFriendButton = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false); //dialog closed
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleOpenAddFriendDialog = () => {
-    setIsDialogOpen(true); //true
+    setIsDialogOpen(true);
   };
 
   const handleCloseAddFriendDialog = () => {
-    setIsDialogOpen(false); //closing dialog
+    setIsDialogOpen(false);
   };
 
   return (

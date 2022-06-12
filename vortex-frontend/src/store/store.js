@@ -22,5 +22,3 @@ const store = createStore(
 );
 
 export default store;
-
-// Don't really know how to work with Redux - might want to check something.

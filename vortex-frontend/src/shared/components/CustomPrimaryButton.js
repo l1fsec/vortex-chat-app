@@ -1,8 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-//Primary button will glow up when specifications are met
-
 const CustomPrimaryButton = ({
   label,
   additionalStyles,
@@ -17,7 +15,7 @@ const CustomPrimaryButton = ({
         color: "white",
         textTransform: "none",
         fontSize: "16px",
-        fontWeight: "500",
+        fontWeight: 500,
         width: "100%",
         height: "40px",
       }}

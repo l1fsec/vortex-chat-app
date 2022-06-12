@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
 import React from "react";
+import { Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 const RedirectText = styled("span")({

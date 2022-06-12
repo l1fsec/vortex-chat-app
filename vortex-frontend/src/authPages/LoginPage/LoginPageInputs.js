@@ -4,14 +4,14 @@ import InputWithLabel from "../../shared/components/InputWithLabel";
 const LoginPageInputs = ({ mail, setMail, password, setPassword }) => {
   return (
     <>
-      <InputWithLabel //Define the input label for mail
+      <InputWithLabel
         value={mail}
         setValue={setMail}
-        label="E-mail" //fix labels!!!!!
+        label="E-mail"
         type="text"
         placeholder="Enter e-mail address"
       />
-      <InputWithLabel //Define the input label for password
+      <InputWithLabel
         value={password}
         setValue={setPassword}
         label="Password"

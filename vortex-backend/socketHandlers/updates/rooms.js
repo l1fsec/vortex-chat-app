@@ -10,6 +10,7 @@ const updateRooms = (toSpecifiedSocketId = null) => {
     });
   } else {
     io.emit("active-rooms", {
+      //emit active rooms to users
       activeRooms,
     });
   }

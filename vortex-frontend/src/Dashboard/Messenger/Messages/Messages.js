@@ -2,7 +2,6 @@ import React, { userRef, useEffect } from "react";
 import { styled } from "@mui/system";
 import MessagesHeader from "./MessagesHeader";
 import { connect } from "react-redux";
-import DUMMY_MESSAGES from "./DUMMY_MESSAGES";
 import Message from "./Message";
 import DateSeparator from "./DateSeparator";
 

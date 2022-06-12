@@ -11,7 +11,7 @@ const Wrapper = styled("div")({
 const Label = styled("p")({
   color: "#b9bbbe",
   textTransform: "uppercase",
-  fontweight: "600",
+  fontWeight: "600",
   fontSize: "16px",
 });
 
@@ -30,7 +30,7 @@ const Input = styled("input")({
 const InputWithLabel = (props) => {
   const { value, setValue, label, type, placeholder } = props;
 
-  const HandleValueChange = (event) => {
+  const handleValueChange = (event) => {
     setValue(event.target.value);
   };
 
@@ -39,7 +39,7 @@ const InputWithLabel = (props) => {
       <Label>{label}</Label>
       <Input
         value={value}
-        onChange={HandleValueChange}
+        onChange={handleValueChange}
         type={type}
         placeholder={placeholder}
       />

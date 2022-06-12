@@ -7,9 +7,9 @@ export const authActions = {
 
 export const getActions = (dispatch) => {
   return {
-    login: (userDetails, navigate) => dispatch(login(userDetails, navigate)), //dispatch login details to their respective places
-    register: (userDetails, navigate) =>
-      dispatch(register(userDetails, navigate)),
+    login: (userDetails, history) => dispatch(login(userDetails, history)),
+    register: (userDetails, history) =>
+      dispatch(register(userDetails, history)),
     setUserDetails: (userDetails) => dispatch(setUserDetails(userDetails)),
   };
 };
@@ -21,37 +21,34 @@ const setUserDetails = (userDetails) => {
   };
 };
 
-const login = (userDetails, navigate) => {
+const login = (userDetails, history) => {
   return async (dispatch) => {
-    const response = await api.login(userDetails); //wait for response
+    const response = await api.login(userDetails);
     console.log(response);
     if (response.error) {
-      //if response doesn't work just send me error as alert
-      dispatch(openAlertMessage(response?.exception?.response?.data));
-    } else {
-      const { userDetails } = response?.data;
-      localStorage.setItem("user", JSON.stringify(userDetails)); //set a new user in local storage
-
-      dispatch(setUserDetails(userDetails));
-      navigate("/dashboard"); //after logging me in, push me to /dashboard
-    }
-  };
-};
-
-const register = (userDetails, navigate) => {
-  return async (dispatch) => {
-    const response = await api.register(userDetails);
-    console.log(response);
-
-    if (response.error) {
-      //show error message
       dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
 
       dispatch(setUserDetails(userDetails));
-      navigate("/dashboard");
+      history.push("/dashboard");
+    }
+  };
+};
+
+const register = (userDetails, history) => {
+  return async (dispatch) => {
+    const response = await api.register(userDetails);
+    console.log(response);
+    if (response.error) {
+      dispatch(openAlertMessage(response?.exception?.response?.data));
+    } else {
+      const { userDetails } = response?.data;
+      localStorage.setItem("user", JSON.stringify(userDetails));
+
+      dispatch(setUserDetails(userDetails));
+      history.push("/dashboard");
     }
   };
 };
