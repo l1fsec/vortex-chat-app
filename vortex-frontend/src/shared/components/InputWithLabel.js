@@ -9,7 +9,7 @@ const Wrapper = styled("div")({
 });
 
 const Label = styled("p")({
-  color: "#b9bbbe",
+  color: "#3f3b35",
   textTransform: "uppercase",
   fontWeight: "600",
   fontSize: "16px",
@@ -20,8 +20,8 @@ const Input = styled("input")({
   height: "40px",
   border: "1px solid black",
   borderRadius: "5px",
-  color: "#dcddde",
-  background: "#35393f",
+  color: "#7a7a79",
+  background: "",
   margin: 0,
   fontSize: "16px",
   padding: "0 5px",

@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 const RedirectText = styled("span")({
-  color: "#00AFF4",
+  color: "#f48200",
   fontWeight: 500,
   cursor: "pointer",
 });

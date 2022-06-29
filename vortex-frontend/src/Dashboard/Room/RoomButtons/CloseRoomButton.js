@@ -9,7 +9,7 @@ const CloseRoomButton = () => {
   };
 
   return (
-    <IconButton onClick={handleLeaveRoom} style={{ color: "white" }}>
+    <IconButton onClick={handleLeaveRoom} style={{ color: "red" }}>
       <CloseIcon />
     </IconButton>
   );

@@ -14,7 +14,7 @@ const WelcomeMessage = () => {
   return (
     <Wrapper>
       <Typography variant="h6" sx={{ color: "white" }}>
-        To start chatting - choose conversation
+        It's quiet here..
       </Typography>
     </Wrapper>
   );

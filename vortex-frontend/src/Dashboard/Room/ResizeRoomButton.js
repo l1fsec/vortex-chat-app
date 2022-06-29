@@ -13,7 +13,7 @@ const MainContainer = styled("div")({
 const ResizeRoomButton = ({ isRoomMinimized, handleRoomResize }) => {
   return (
     <MainContainer>
-      <IconButton style={{ color: "white" }} onClick={handleRoomResize}>
+      <IconButton style={{ color: "orange" }} onClick={handleRoomResize}>
         {isRoomMinimized ? <OpenInFullIcon /> : <CloseFullscreenIcon />}
       </IconButton>
     </MainContainer>

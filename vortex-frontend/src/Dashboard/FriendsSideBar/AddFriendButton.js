@@ -7,7 +7,7 @@ const additionalStyles = {
   marginLeft: "5px",
   width: "80%",
   height: "30px",
-  background: "#3ba55d",
+  background: "#c47c00",
 };
 
 const AddFriendButton = () => {
